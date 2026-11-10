@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Pantul Padel — Booking Lapangan Padel Bandung</title>
+  <meta name="description" content="Booking lapangan padel di Arcamanik, Bandung. Lihat jam kosong 4 lapangan, sewa raket, patungan per orang, atau ikut main bareng." />
+  <meta name="theme-color" content="#1c4a9c" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231c4a9c'/%3E%3Cpath d='M10 32h44M32 10v44' stroke='%23fff' stroke-width='3' opacity='.6'/%3E%3Ccircle cx='42' cy='22' r='9' fill='%23e3f43c'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- RAIL: kiri di desktop, tab bar bawah di HP -->
+  <nav class="rail" aria-label="Navigasi">
+    <a href="#jadwal" class="rail__brand" aria-label="Pantul Padel"><span class="ball" aria-hidden="true"></span><b>Pantul</b></a>
+    <a href="#jadwal" class="rail__item" aria-current="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M9 4v17M15 4v17"/></svg><span>Jadwal</span></a>
+    <a href="#bareng" class="rail__item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3.5 2.7-6 6-6s6 2.5 6 6M12 20c0-3.5 1.8-6 4-6s6 2.5 6 6"/></svg><span>Bareng</span></a>
+    <a href="#harga" class="rail__item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Harga</span></a>
+    <a href="#info" class="rail__item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span>Info</span></a>
+  </nav>
+
+  <div class="app">
+    <p class="demo" id="demoBar" hidden>Website concept by Nauval Dev · lapangan &amp; jadwal fiktif · <a id="demoLink" target="_blank" rel="noopener">Hubungi</a></p>
+
+    <!-- SCHEDULE = layar pertama -->
+    <section class="sched" id="jadwal" aria-labelledby="schedTitle">
+      <header class="sched__head">
+        <div>
+          <p class="where" id="where"></p>
+          <h1 id="schedTitle">Pilih jam, langsung main.</h1>
+        </div>
+        <ul class="facts"><li><b>4</b> lapangan</li><li><b>07–23</b> setiap hari</li><li><b>Raket</b> bisa sewa</li></ul>
+      </header>
+
+      <div class="days" id="days" role="tablist" aria-label="Pilih tanggal"></div>
+
+      <div class="sched__body">
+        <div class="board-wrap">
+          <div class="legend"><span><i class="lg lg--free"></i>Kosong</span><span><i class="lg lg--busy"></i>Terisi</span><span><i class="lg lg--match"></i>Main bareng</span><span><i class="lg lg--sel"></i>Pilihanmu</span></div>
+          <div class="board" id="board" aria-live="polite"></div>
+        </div>
+
+        <aside class="ticket" id="ticket" aria-live="polite">
+          <button class="ticket__x" id="ticketX" type="button" aria-label="Batalkan pilihan">×</button>
+          <div id="ticketBody"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MAIN BARENG -->
+    <section class="sec" id="bareng" aria-labelledby="barengTitle">
+      <div class="sec__head">
+        <h2 id="barengTitle">Main bareng</h2>
+        <p>Slot yang dibuka pemain lain dan masih kurang orang. Ikut, bayar bagianmu saja.</p>
+      </div>
+      <div class="matches" id="matches"></div>
+    </section>
+
+    <!-- HARGA -->
+    <section class="sec sec--court" id="harga" aria-labelledby="hargaTitle">
+      <div class="sec__head"><h2 id="hargaTitle">Harga per lapangan / jam</h2><p>Satu lapangan untuk 4 pemain. Lapangan 4 (semi-outdoor) lebih murah Rp50.000.</p></div>
+      <div class="scoreboard" id="bands"></div>
+      <div class="extras" id="extras"></div>
+    </section>
+
+    <!-- INFO -->
+    <section class="sec" id="info" aria-labelledby="infoTitle">
+      <div class="sec__head"><h2 id="infoTitle">Aturan main</h2><p id="addr"></p></div>
+      <ol class="rules" id="rules"></ol>
+      <div class="courts" id="courts"></div>
+    </section>
+
+    <footer class="foot"><b>Pantul Padel</b> · Website concept by Nauval Dev</footer>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
